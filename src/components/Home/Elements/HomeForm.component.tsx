@@ -16,7 +16,7 @@ export const HomeForm = () => {
   const { register, handleSubmit } = useForm<FormInputs>();
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
     setLoading(true);
-    const res = await getWeatherByCityNameAction(data.place);
+    const res = await getWeatherByCityNameAction(data.place, "c");
     if (res) {
       setCurrentPlace(res);
       setLoading(false);

@@ -11,7 +11,12 @@ export const Forecasts: React.FC<Props> = ({ currentFavPlace }) => {
     <Stack>
       <Typography
         variant="body1"
-        sx={{ paddingBottom: 2, paddingTop: 2, textAlign: "center" }}
+        sx={{
+          paddingBottom: 2,
+          paddingTop: 2,
+          textAlign: "center",
+          fontWeight: "bold",
+        }}
       >
         Extended Forecast
       </Typography>
@@ -24,10 +29,10 @@ export const Forecasts: React.FC<Props> = ({ currentFavPlace }) => {
             <Stack sx={{ textAlign: "center" }}>
               <Typography variant="h6">Day: {forecast.day}</Typography>
               <Typography variant="body1">
-                High temperature: {forecast.high}
+                High temperature: {forecast.high}°
               </Typography>
               <Typography variant="body1">
-                Low temperature: {forecast.low}
+                Low temperature: {forecast.low}°
               </Typography>
               <Typography variant="body1">
                 Description: {forecast.text}

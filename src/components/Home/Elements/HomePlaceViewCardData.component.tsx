@@ -27,6 +27,7 @@ export const HomePlaceViewCardData: React.FC<Props> = ({
         </Typography>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           Temperature: {currentPlace.current_observation?.condition.temperature}
+          °
         </Typography>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           Description: {currentPlace.current_observation?.condition.text}
