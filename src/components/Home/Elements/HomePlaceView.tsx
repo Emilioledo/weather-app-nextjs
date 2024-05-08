@@ -1,10 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import { UseAppContext } from "@/context";
-import { Stack, Typography } from "@mui/material";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import CustomCard from "@/components/UI/Card/Card.component";
 import { WeatherData } from "@/service/types/weather.type";
+import { HomePlaceViewCardData } from "./HomePlaceViewCardData.component";
 
 export const HomePlaceView = () => {
   const [isFav, setIsFav] = useState(false);
@@ -23,72 +22,30 @@ export const HomePlaceView = () => {
     }
   };
 
+  useEffect(() => {
+    console.log("currentPlace", currentPlace);
+  }, [currentPlace]);
+
   const checkIsFav = () => {
     const isFav = favWeatherList?.includes(currentPlace);
+    console.log("isFav", isFav);
     setIsFav(isFav);
   };
 
   useEffect(() => {
     checkIsFav();
-  }, [favWeatherList]);
+  }, [favWeatherList, currentPlace]);
 
   return (
     <>
       {currentPlace && (
-        <CustomCard>
-          <Stack
-            direction="row"
-            justifyContent="space-between"
-            alignItems="flex-start"
-          >
-            <Stack>
-              <Typography
-                sx={{ fontSize: 24 }}
-                color="text.primary"
-                gutterBottom
-              >
-                {currentPlace.location.city}, {currentPlace.location.country}
-              </Typography>
-              <Typography
-                sx={{ fontSize: 14 }}
-                color="text.secondary"
-                gutterBottom
-              >
-                Temperature:{" "}
-                {currentPlace.current_observation?.condition.temperature}
-              </Typography>
-              <Typography
-                sx={{ fontSize: 14 }}
-                color="text.secondary"
-                gutterBottom
-              >
-                Description: {currentPlace.current_observation?.condition.text}
-              </Typography>
-              <Typography
-                sx={{ fontSize: 14 }}
-                color="text.secondary"
-                gutterBottom
-              >
-                Humidity:{" "}
-                {currentPlace.current_observation?.atmosphere.humidity}
-              </Typography>
-              <Typography
-                sx={{ fontSize: 14 }}
-                color="text.secondary"
-                gutterBottom
-              >
-                Speed wind: {currentPlace.current_observation?.wind.speed}
-              </Typography>
-            </Stack>
-            <Stack onClick={handleFav}>
-              <FavoriteBorderIcon
-                sx={{
-                  color: isFav ? "red" : "grey",
-                  cursor: "pointer",
-                }}
-              />{" "}
-            </Stack>
-          </Stack>
+        <CustomCard customSx={{ backgroundColor: "#F8F8F8" }}>
+          <HomePlaceViewCardData
+            currentPlace={currentPlace}
+            isHomeCard
+            isFav={isFav}
+            handleFav={handleFav}
+          />
         </CustomCard>
       )}
     </>

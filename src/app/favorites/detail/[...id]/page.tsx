@@ -1,10 +1,10 @@
-import FavoritesDataLayer from "@/components/Favorites/FavoritesDataLayer.server";
+import FavoritesDetailDataLayer from "@/components/Favorites/Detail/FavoritesDetailDataLayer.server";
 import { Suspense } from "react";
 
 export default function Favorites() {
   return (
     <Suspense fallback={null}>
-      <FavoritesDataLayer />;
+      <FavoritesDetailDataLayer />;
     </Suspense>
   );
 }
