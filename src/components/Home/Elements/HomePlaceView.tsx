@@ -12,29 +12,30 @@ export const HomePlaceView = () => {
   const handleFav = () => {
     if (isFav) {
       setFavWeatherList((prevState: WeatherData[]) =>
-        prevState.filter((element) => element !== currentPlace)
+        prevState.filter(
+          (element) => element.location.woeid !== currentPlace.location.woeid
+        )
       );
+      setIsFav(false);
     } else {
       setFavWeatherList((prevState: WeatherData[]) => [
         ...prevState,
         currentPlace,
       ]);
+      setIsFav(true);
     }
   };
 
-  useEffect(() => {
-    console.log("currentPlace", currentPlace);
-  }, [currentPlace]);
-
   const checkIsFav = () => {
-    const isFav = favWeatherList?.includes(currentPlace);
-    console.log("isFav", isFav);
-    setIsFav(isFav);
+    const isFavorite = favWeatherList?.find((element: WeatherData) => {
+      return element.location.woeid == currentPlace.location.woeid;
+    });
+    setIsFav(!!isFavorite);
   };
 
   useEffect(() => {
     checkIsFav();
-  }, [favWeatherList, currentPlace]);
+  }, [setFavWeatherList, currentPlace]);
 
   return (
     <>

@@ -18,9 +18,10 @@ export const Forecasts: React.FC<Props> = ({ currentFavPlace }) => {
       {currentFavPlace &&
         currentFavPlace.forecasts.slice(0, 5).map((forecast, index) => (
           <CustomCard
+            key={index}
             customSx={{ padding: 1, backgroundColor: "#F8F8F8", margin: 1 }}
           >
-            <Stack key={index} sx={{ textAlign: "center" }}>
+            <Stack sx={{ textAlign: "center" }}>
               <Typography variant="h6">Day: {forecast.day}</Typography>
               <Typography variant="body1">
                 High temperature: {forecast.high}
