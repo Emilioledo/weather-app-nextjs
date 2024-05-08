@@ -51,7 +51,7 @@ export const FavoritesList = () => {
                   customSx={{
                     backgroundColor: "#F8F8F8",
                     width: 120,
-                    height: 240,
+                    height: 200,
                   }}
                 >
                   <HomePlaceViewCardData

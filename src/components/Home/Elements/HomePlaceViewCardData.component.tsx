@@ -22,7 +22,11 @@ export const HomePlaceViewCardData: React.FC<Props> = ({
       alignItems="flex-start"
     >
       <Stack>
-        <Typography sx={{ fontSize: 24 }} color="text.primary" gutterBottom>
+        <Typography
+          sx={{ fontSize: 16, fontWeight: "bold" }}
+          color="text.primary"
+          gutterBottom
+        >
           {currentPlace.location.city}, {currentPlace.location.country}
         </Typography>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
