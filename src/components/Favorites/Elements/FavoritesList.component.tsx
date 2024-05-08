@@ -22,8 +22,16 @@ export const FavoritesList = () => {
       maxWidth="md"
     >
       <Stack alignItems="center" sx={{ paddingBottom: 4 }}>
-        <Typography variant="h5" sx={{ paddingBottom: 2 }}>
-          Weather App
+        <Typography
+          variant="h5"
+          sx={{
+            paddingBottom: 2,
+            fontWeight: "bold",
+            color: "#333",
+            textAlign: "center",
+          }}
+        >
+          Awesome Weather App
         </Typography>
         <Link href="/" style={{ textDecoration: "none" }}>
           Go to Home
@@ -42,7 +50,7 @@ export const FavoritesList = () => {
                 <CustomCard
                   customSx={{
                     backgroundColor: "#F8F8F8",
-                    width: "100%",
+                    width: 120,
                     height: "100%",
                   }}
                 >

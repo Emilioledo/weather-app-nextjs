@@ -57,8 +57,16 @@ export const FavoritesDetail = () => {
       {currentFavPlace && (
         <>
           <Stack alignItems="center" sx={{ paddingBottom: 4 }}>
-            <Typography variant="h5" sx={{ paddingBottom: 2 }}>
-              Weather App
+            <Typography
+              variant="h5"
+              sx={{
+                paddingBottom: 2,
+                fontWeight: "bold",
+                color: "#333",
+                textAlign: "center",
+              }}
+            >
+              Awesome Weather App
             </Typography>
             <Link href="/favorites" style={{ textDecoration: "none" }}>
               Go Back
