@@ -39,7 +39,18 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 1. Search for the Yahoo Weather API on RapidAPI Hub: (https://rapidapi.com/hub).
 2. Navigate to the "Test Endpoint" or "Pricing" tab and subscribe to the Yahoo Weather API.
-3. Obtain your API key and host information from the "Test Endpoint" section
+   example with fetch:
+   const options = {
+   method: 'GET',
+   url: 'https://yahoo-weather5.p.rapidapi.com/weather',
+   params: {
+   },
+   headers: {
+   'X-RapidAPI-Key': '',
+   'X-RapidAPI-Host': ''
+   }
+   };
+3. Obtain your API URL, API key and host information from the "Test Endpoint" section
 4. Create a .env file in the root directory of your project.
 5. Add the following environment variables to your .env file:
 
@@ -48,6 +59,6 @@ RAPIDAPI_KEY=YOUR_RAPIDAPI_KEY
 RAPIDAPI_HOST=YOUR_RAPIDAPI_HOST
 ```
 
-Replace YOUR_RAPIDAPI_KEY and YOUR_RAPIDAPI_HOST with your actual RapidAPI key and host.
+Replace NEXT_PUBLIC_API_URL, YOUR_RAPIDAPI_KEY and YOUR_RAPIDAPI_HOST with your actual ApiUrl, RapidAPI key and host.
 
 Now your Next.js app is ready to connect to the Yahoo Weather API!
